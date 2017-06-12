@@ -1,0 +1,15 @@
+*** Settings ***
+Library           ../../../library/OpenPhp.py    ${${ENV}_URL}    @{${ENV}_PAY_USER}
+
+*** Variables ***
+@{T2_PAY_USER}    baidddizpn    e66aa647de9f18b90d8bb78d0110be6b
+@{T2_FREE_USER}    400054    737c89058598258d39fe711387a7b32d
+@{T2_DEBT_USER}    000000    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+${T2_URL}         http://httpbin.org/get
+${OL_URL}         http://api.demo.com/open
+${ENV}            T2
+
+*** Keywords ***
+TRY
+    [Arguments]    &{args}
+    GET    default=myarg    &{args}
